@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tamaño de items en filas</title>
+  <style>
+
+    body {
+      font-family: Arial;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .container {
+      display: grid;
+      height: 100vh;
+      grid-template-columns: [first-column] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [line7] 1fr [last-column];
+      grid-template-rows: [first-row] 200px [line2] 200px [last-row];
+      gap: 5px;
+    }
+
+    .item {
+      background: lightgreen;
+      padding: 10px;
+      border: solid red 1px;
+    }
+
+    .item:nth-of-type(1) {
+      background: yellow;
+      grid-column: first-column / line4;
+      grid-row: first-row / last-row;
+
+    }
+
+    .item:nth-of-type(2) {
+      background: yellow;
+      grid-column: line4 / line6;
+      grid-row: first-row / last-row;
+    }
+
+    .item:nth-of-type(3) {
+      background: yellow;
+      grid-column: line6 / last-column;
+    }
+
+  </style>
+</head>
+
+<body>
+  <section class="container">
+    <div class="item">Contenido #1</div>
+    <div class="item">Contenido #2</div>
+    <div class="item">Contenido #3</div>
+    <div class="item">Contenido #4</div>
+    <div class="item">Contenido #5</div>
+  </section>
+</body>
+
+</html>
